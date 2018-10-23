@@ -1,0 +1,34 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" 
+"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+
+	<!-- Spring IOC container will create only singleton object -->
+	<bean class="com.demo.entity.Test" id="test1">
+		<property name="gender" value="Mr">
+			<!-- <value>Mr</value> you can provide value by using this child tag without 
+				double cot -->
+		</property>
+		<constructor-arg index="0">
+			<value type="java.lang.String">abc@gmail.com</value>
+		</constructor-arg>
+
+		<constructor-arg index="1">
+			<value type="java.lang.String">110042</value>
+		</constructor-arg>
+		
+	</bean>
+	
+
+
+	<!-- if you want to create multiple objects for a single POJO class then 
+		you can use scope. for example : <bean class="com.demo.entity.Test" id="test" 
+		scope = "prototype"></bean> -->
+
+
+</beans>
+
+<!-- Steps to find DTD : 1> Go to spring-beans-{version}.RELEASE.jar 2> then 
+	go to org.springframework.beans.factory.xml 3> then find spring-beans.dtd 
+	4> and open it. 5> copy line 36 and 37 .. i.e <!DOCTYPE beans PUBLIC "-//SPRING//DTD 
+	BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd"> -->
